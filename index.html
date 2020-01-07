@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hit the circle</title>
+    <link rel="stylesheet" href="./libraries/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="loadTheGame()">
+    <div class="container text-center">
+      <h1>Hit the circle</h1>
+      <p>Test your skill how many circles you can hit?</p>
+      <div class="form-group">
+        <label class="label-text" for="score">score : </label>
+        <input
+          type="number"
+          value="0"
+          placeholder="score"
+          id="score"
+          disabled
+        />
+      </div>
+      <hr />
+      <div id="circle-container"></div>
+      <hr />
+      <div class="form-group">
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="gameInstance.play()"
+        >
+          Play
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="gameInstance.stop()"
+        >
+          Stop
+        </button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+    <script>
+      var gameInstance = null;
+      function loadTheGame() {
+        gameInstance = new Game();
+
+        gameInstance.drawCircles();
+      }
+    </script>
+  </body>
+</html>
